@@ -1,0 +1,6 @@
+.env
+passwords-hash.py
+definitions.json
+rabbitmq.conf
+etc/
+rabbitmq/
