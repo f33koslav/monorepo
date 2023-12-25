@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+    rabbitmq3:
+        container_name: ${ENV}_${CONTAINER_NAME}
+        image: rabbitmq:3.8-management-alpine
+        environment:
+            - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+            - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+        ports:
+            # AMQP protocol port
+            - '5672:5672'
+            # HTTP management UI
+            - '15672:15672'
+#TODO add persistent volumes for rabbit data as queues, exchanges etc.
+#TODO add logging mechanism
+#TODO prepare definitions.json for role managegement
